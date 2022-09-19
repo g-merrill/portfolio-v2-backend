@@ -10,22 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_19_072901) do
+ActiveRecord::Schema.define(version: 2022_09_19_083509) do
 
   create_table "pages", force: :cascade do |t|
-    t.integer "visit_id"
     t.integer "parent_page_id"
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["parent_page_id"], name: "index_pages_on_parent_page_id"
-    t.index ["visit_id"], name: "index_pages_on_visit_id"
   end
 
   create_table "visits", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "page_id"
+    t.index ["page_id"], name: "index_visits_on_page_id"
   end
 
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       root 'visits#index'
 
       resources :visits
+      resources :pages
     end
   end
 end

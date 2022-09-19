@@ -55,7 +55,7 @@ module Api::V1
     end
 
     def visit_params
-      params.permit(:name)
+      params.permit(:name, :page_id)
     end
   end
 end
